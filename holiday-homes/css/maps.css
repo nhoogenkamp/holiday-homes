@@ -1,0 +1,19 @@
+/* Container for the embedded Google Map responsive layout using max-width and auto margins
+   Reference: https://www.w3schools.com/html/html_responsive.asp */
+.container_map {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Makes the embedded iframe fill the container
+   Reference: https://www.w3schools.com/tags/tag_iframe.asp */
+.container_map iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}

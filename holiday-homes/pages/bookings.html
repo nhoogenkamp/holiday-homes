@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <title>Bookings</title>
+	
+	
+	<!-- Main stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+	<!-- Booking-specific styles -->
+	<link rel="stylesheet" href="../css/booking-styles.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
+	<!-- Favicon icon in tab -->
+	<link rel="icon" type="image/x-icon" href="../images/niels-holiday-home.PNG">
+	
+	<!-- SEO Meta Description which helps improve visibility in search results -->	
+	<meta name="description" content="Check availability and request your beachside getaway at Niels Holiday Homes. Choose from 1–3 bedroom holiday homes with sea views.">
+
+
+
+</head>
+<body>
+      <header class="main-header">
+        <div class="container-header">
+            <nav class="main-nav">
+                <ul>
+					<!-- Navigation Links -->
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="bookings.html">Bookings</a></li>
+                    <li><a href="things-to-do.html">Things to do</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>			
+            </nav>
+			
+			<!-- Website Logo which links back home if clicking -->
+			<a href="../index.html">
+			<img src="../images/logo.png" alt="logo" class="logo-img">
+			</a>
+			
+        </div>
+    </header>
+   
+    <main class="main-content">
+		
+		<!-- Responsive layout for seasonal pricing in a table section -->
+		<!-- Reference: https://www.w3schools.com/html/html_tables.asp -->
+		<div class="container">		
+			<div class="table-rates">
+					<h1>Holiday Homes Rates</h1>
+						<table class="center">
+						  <tr>
+							<th>Rates 2025</th>
+							<th>1 Bedroom Home</th>
+							<th>2 Bedroom Home</th>
+							<th>3 Bedroom Home</th>
+						  </tr>
+						  <tr>
+						  
+							<!-- Each row is a season with nightly pricing -->
+							<td>1-Night stay (October - November)</td>
+							<td>€100.00</td>
+							<td>€120.00</td>
+							<td>€135.00</td>
+						  </tr>
+						  <tr>
+							<td>1-Night stay (December)</td>
+							<td>€150.00</td>
+							<td>€170.00</td>
+							<td>€185.00</td>
+						  </tr>
+						  <tr>
+							<td>1-Night stay (January - April)</td>
+							<td>€100.00</td>
+							<td>€120.00</td>
+							<td>€135.00</td>
+						  </tr>
+						  <tr>
+							<td>1-Night stay (May - June)</td>
+							<td>€150.00</td>
+							<td>€170.00</td>
+							<td>€185.00</td>
+						  </tr>
+						  <tr>
+							<td>1-Night stay (July - September)</td>
+							<td>€170.00</td>
+							<td>€180.00</td>
+							<td>€195.00</td>
+						  </tr>
+						</table>
+
+			</div>	
+		</div>	
+		
+		<!-- Booking form selection -->
+		<!-- Reference: https://www.w3schools.com/tags/tag_input.asp -->
+		
+		<div class="container"id="formID">		
+			<div class="Booking-form">
+				<h2>Booking Form</h2>
+				<p>Click on the Booking Form button at the bottom of this page to request a booking</p>
+
+				
+
+					<!-- Button to show popup form -->
+					<button class="btn" onclick="openForm()">Booking Form</button>
+					
+					<!-- Hidden Popup Form -->
+					<div class="form-popup" id="myForm">
+						
+						<!-- Error box; only will come via JS if validation fails -->
+						<div id="error-box" style="display: none;"></div>
+						
+						
+						<!-- Form submission is handled in form.js -->
+						<form id="booking-request" action="" class="form-container">
+					    
+							<h1>Booking Request</h1>
+
+							<!-- NAME INPUTS -->
+							<div class="names">
+							  <div class="input-group">
+								<label for="first_name"><b>First Name</b></label>
+								<input type="text" id="first_name" name="first_name" placeholder="Enter your first name">
+							  </div>
+
+							  <div class="input-group">
+								<label for="last_name"><b>Last Name</b></label>
+								<input type="text" id="last_name" name="last_name" placeholder="Enter your last name">
+							  </div>
+							</div>
+							
+							<!-- How many guests selector-->
+							<div class="guests">
+								<div class="input-group">	
+									<label for="adults"><b>How many adults</b></label>
+										<select id="adults" name="adults">
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+										</select>
+								</div>		
+								<div class="input-group">		
+									<label for="kids"><b>Children under 12:</b></label>
+										<select id="kids" name="kids">
+											<option value="0">0</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+										</select>	
+								</div>		
+							  
+							</div>										
+										
+							<!-- House type selection -->
+							<div class="house-option">
+								<div class="input-group">	
+								<label for="House1bed"><b>1-bedroom </b></label>
+								<input type="radio" id="one_bedroom" name="bedroom_choice">
+								</div>
+
+
+								<div class="input-group">	
+								<label for="House2bed"><b>2-bedroom </b></label>
+								<input type="radio" id="two_bedroom" name="bedroom_choice">
+								</div>
+
+
+								<div class="input-group">	
+								<label for="House3bed"><b>3-bedroom </b></label>
+								<input type="radio" id="three_bedroom" name="bedroom_choice">
+								</div>									  
+							</div>									
+							
+							
+							<!-- Date picking -->
+							<div class="date-option">
+								<div class="input-group">										
+								<label for="date"><b>Check-in</b></label>	
+								<input type="date" id="Check_in" placeholder="Check_in" name="Check_in">	
+								</div>
+								
+								<div class="input-group">
+								<label for="date"><b>Check-out</b></label>	
+								<input type="date" id="Check_out" placeholder="Check_out" name="Check_out">
+								</div>									  
+							</div>
+						
+						<!-- Email address -->
+						<label for="email"><b>Email</b></label>
+						<input type="email" id="email" placeholder="Enter Email" name="email">
+						
+						<!-- phone contact -->
+						<label for="phone"><b>Phone number:</b></label>
+						<input type="tel" id="phone" placeholder="phone number" name="phone">
+						
+						<!-- Special request messages -->
+						<label for="message"><b>Special requests</b></label>
+						<textarea type="text" id="message" placeholder="Your message..."></textarea>
+						
+						<!-- Agreeing to terms and conditions -->
+						<label>
+						<input type="checkbox" id="terms"> I agree to the terms and conditions
+						</label>
+												
+						<!-- Form button to either submit or cancel -->
+						<button type="submit" class="btn">Book</button>
+						<button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+						
+						
+
+					  </form>
+					</div>
+					
+				<p> The regular check-in times are daily from 11:00am - 5:30pm. <br>
+				Please make the us aware if you plan to arrive outside of these hours.</p> 
+
+			</div>	
+		</div>	
+
+		<!-- Interior Images for visual looks -->
+		<div class="interior">
+			<img src="../images/holiday-homes.jpeg" alt="holiday homes interior">
+		</div>			
+    </main>
+
+	 <!-- Footer with quick links to differnt pages and Copyright -->
+     <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    
+                    <ul>
+					<h3>Quick Links</h3>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="bookings.html">Bookings</a></li>
+                    <li><a href="things-to-do.html">Things to do</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Niels Holiday Homes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+	
+
+	<!-- jQuery CDN (used in form validation) -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
+	<!-- Custom form validation logic -->
+	<script src="../javascript/form.js"></script>
+	
+
+
+	
+</body>
+
+
+</html>

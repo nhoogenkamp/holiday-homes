@@ -1,0 +1,288 @@
+/* Root Variables for Consistent Styling
+   Reference: https://www.w3schools.com/css/css3_variables.asp */
+   /* White - used for backgrounds, Dark green accent for hover and buttons, Dark text color for contrast, Niels Holiday Homes main green color  */
+:root {
+    --primary-color: #FFFFFF;
+    --accent-color: #48786c;
+    --dark-text: #245170;
+    --light-green: #619e8e;
+}
+
+/* Reset & Global Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Body Styling with fonts and colour */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
+
+/* Header Styles */
+.main-header {
+    background-color: var(--primary-color);
+    padding: 0.5rem 0;
+    color: var(--light-green);
+	position: relative;
+    z-index: 10;
+}
+
+/*Navigation settings for space  */
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Adjust size to fit better */
+.logo-img {
+  width: 80px;              
+  height: auto;
+  display: block;
+}
+
+/* Navigation List */
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+	padding-left: 1rem;
+}
+
+/* Navigation Links */
+.main-nav a {
+    color: var(--light-green);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Navigation Hover Effect */
+.main-nav a:hover {
+    background-color: var(--light-green);
+	color: var(--primary-color);
+}
+
+/*Full screen video features styling */
+.video-feature {
+	width: 100%;
+    height: 90vh;
+	overflow: hidden;
+}
+.video-feature video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	object-position: top;
+}
+
+
+/* General main content area has enough vertical space */
+.main-content {
+    min-height: 70vh;
+}
+
+
+/* Grid Layout Using Flexbox for the Columns */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  box-sizing: border-box;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Large content column */
+.column.large {
+  flex: 0 0 60%;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Small column */
+.column.small {
+  flex: 0 0 40%;
+  text-align: center;
+}
+
+.column.small img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.column.square {
+  flex: 0 0 25%;
+  text-align: center;
+}
+/* Square Columns for “Things to Do”  */
+.column.square a h3 {
+  color: var(--dark-text)
+}
+
+.column.square img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.column.square img {
+  width: 100%;
+  height: 200px; /* Consistent height */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Slight zoom on hover */
+.column.square img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive Adjustments Using Media Queries  
+Stack columns on smaller screens */
+@media (max-width: 768px) {
+  .column.large,
+  .column.small {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .column.square {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .column.square {
+    flex: 1 1 100%;
+    max-width: 100%; /* 1 per row */
+  }
+}
+
+/* Hero Section Button: Book Now */
+.hero-section {
+	padding-bottom: 20px;
+	justify-content: center;	
+	align-items: center;
+	text-align: center;
+}
+
+/* Reusable Button Style
+   Reference: https://www.w3schools.com/css/css3_buttons.asp */
+.btn {
+  display: block;              
+  width: 100%;                 
+  max-width: 768px;            
+  margin: 0 auto;              
+  padding: 1rem;               
+  background-color: var(--light-green);
+  color: var(--primary-color);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+	color: var(--light-green);
+}
+
+
+/* Fullscreen Image Section (interior image) */
+.interior{
+	width: 100%;
+    height: 100vh;
+	overflow: hidden;
+}
+.interior img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	object-position: top;
+}
+
+/* Icon-based Key Features Section */
+.key-features {
+	padding: 1em;
+}
+
+
+/* Footer Styles */
+.main-footer {
+    background-color: var(--primary-color);
+    color: var(--light-green);
+    padding: 1rem;
+    margin-top: auto;
+    transition: all 0.3s ease;
+}
+.footer-col {
+	padding-left: 1rem;
+}
+
+.main-footer ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.main-footer a {
+    color: var(--light-green);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+
+.copyright {
+    text-align: center;
+}
+
+
+/* Responsive Header Navigation*/
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo {
+        text-align: center;
+    }
+}
+
+/* Form and Spacing Utility Classes */
+#formID {
+	padding-bottom: 2em;	
+}
+
+.center_header {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+
+.small_space {
+	padding-bottom: 2em;
+}
+
